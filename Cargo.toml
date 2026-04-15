@@ -1,9 +1,9 @@
 [package]
-name = "aha-va"
+name = "aha-voice"
 version = "0.1.0"
 edition = "2024"
-repository = "https://github.com/jhqxxx/aha-va"
+repository = "https://github.com/jhqxxx/aha-voice"
 license = "Apache-2.0"
-description = "aha voice assistant"
+description = "aha voice"
 
 [dependencies]
