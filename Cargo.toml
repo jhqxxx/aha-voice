@@ -2,6 +2,8 @@
 name = "aha-va"
 version = "0.1.0"
 edition = "2024"
+repository = "https://github.com/jhqxxx/aha-va"
+license = "Apache-2.0"
 description = "aha voice assistant"
 
 [dependencies]
