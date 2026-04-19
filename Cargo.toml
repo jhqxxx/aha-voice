@@ -7,3 +7,38 @@ license = "Apache-2.0"
 description = "aha voice"
 
 [dependencies]
+aha = { git = "https://github.com/jhqxxx/aha.git"}
+anyhow = "1.0.102"
+clap = "4.6.1"
+cpal = { version = "0.17.3", features = ["asio"] }
+hound = "3.5.1"
+serde_json = "1.0.149"
+
+[features]
+cuda = ["aha/cuda"]
+metal = ["aha/metal"]
+
+
+[[example]]
+name = "cpal_in_beginner"
+path = "examples/cpal_in_beginner.rs"
+
+[[example]]
+name = "cpal_out_beginner"
+path = "examples/cpal_out_beginner.rs"
+
+[[example]]
+name = "vad_beginner"
+path = "examples/vad_beginner.rs"
+
+[[example]]
+name = "asr_beginner"
+path = "examples/asr_beginner.rs"
+
+[[example]]
+name = "llm_beginner"
+path = "examples/llm_beginner.rs"
+
+[[example]]
+name = "tts_beginner"
+path = "examples/tts_beginner.rs"
