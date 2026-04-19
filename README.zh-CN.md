@@ -263,3 +263,22 @@ aha-voice/
 - [cpal](https://github.com/RustAudio/cpal) - 跨平台音频库
 - [hound](https://github.com/ruuda/hound) - WAV 音频文件读写库
 - [clap](https://github.com/clap-rs/clap) - 命令行参数解析器
+
+## 微信 & 捐赠
+<div align="center">
+
+| 微信群 | 捐赠 |
+|--------------|--------|
+| ![Wechat Group](./assets/aha_weixinqun.png) | ![Donate](./assets/donate.png) |
+
+</div>
+
+---
+
+<p align="center">
+  <sub>由 aha 团队用 ❤️ 构建</sub>
+</p>
+
+<p align="center">
+  <sub>如果这个项目对你有帮助，请给我们一个 ⭐ Star！</sub>
+</p>

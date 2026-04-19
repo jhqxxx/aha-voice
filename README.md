@@ -264,3 +264,22 @@ This project is licensed under the Apache License 2.0 - see the LICENSE file for
 - [cpal](https://github.com/RustAudio/cpal) - Cross-platform audio library
 - [hound](https://github.com/ruuda/hound) - WAV audio file reader/writer
 - [clap](https://github.com/clap-rs/clap) - Command line argument parser
+
+## Wechat & Donate
+<div align="center">
+
+| Wechat Group | Donate |
+|--------------|--------|
+| ![Wechat Group-expired 260425](./assets/aha_weixinqun.png) | ![Donate](./assets/donate.png) |
+
+</div>
+
+---
+
+<p align="center">
+  <sub>Built with ❤️ by the aha team</sub>
+</p>
+
+<p align="center">
+  <sub>If this project helps you, please consider giving us a ⭐ Star!</sub>
+</p>
