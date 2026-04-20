@@ -1,4 +1,3 @@
-use aha::utils::get_default_save_dir;
 use aha_voice::err_fn;
 use anyhow::Result;
 use clap::Parser;
