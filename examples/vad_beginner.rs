@@ -26,7 +26,7 @@ fn main() -> Result<()> {
     let sample_rate = config.sample_rate as usize;
     // let min_num =
     //     (16000usize / 1000 * 25) * (sample_rate as f32 / 16000.0).ceil() as usize * channels;
-    let min_num = sample_rate * channels;
+    let min_num = ((sample_rate * channels) as f32 * 0.5).ceil() as usize;
     std::thread::spawn(move || -> anyhow::Result<()> {
         let input_stream = input_device.build_input_stream(
             &config,
@@ -48,7 +48,7 @@ fn main() -> Result<()> {
     loop {
         if not_enough {
             // println!("audio_vec is not enough");
-            std::thread::sleep(std::time::Duration::from_millis(50));
+            std::thread::sleep(std::time::Duration::from_millis(25));
         }
         let audio_vec = {
             let mut audio_guard = audio_data.lock().unwrap();
@@ -64,7 +64,7 @@ fn main() -> Result<()> {
         let vad_res = vad.detect_frame_f32(audio_vec, channels, Some(sample_rate))?;
         if vad_res.is_none() {
             println!("is not speech");
-            std::thread::sleep(std::time::Duration::from_millis(25));
+            std::thread::sleep(std::time::Duration::from_millis(10));
             continue;
         }
         println!("vad_res: {:?}", vad_res);

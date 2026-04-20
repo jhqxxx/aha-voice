@@ -15,6 +15,7 @@ struct Args {
     /// Path to qwen3asr model directory
     #[arg(short = 'a', long = "asr-path")]
     qwen3asr_path: String,
+
     /// Path to qwen3_5_path model directory
     #[arg(short = 'l', long = "qwen3.5-path")]
     qwen3_5_path: String,
@@ -32,7 +33,7 @@ fn main() -> Result<()> {
     let config: cpal::StreamConfig = input_device.default_input_config().unwrap().into();
     let channels = config.channels as usize;
     let sample_rate = config.sample_rate as usize;
-    let min_num = sample_rate * channels;
+    let min_num = ((sample_rate * channels) as f32 * 0.5).ceil() as usize;
     std::thread::spawn(move || -> anyhow::Result<()> {
         let input_stream = input_device.build_input_stream(
             &config,
@@ -95,7 +96,10 @@ fn main() -> Result<()> {
                 std::thread::sleep(std::time::Duration::from_millis(10));
                 continue;
             }
-            let speech = asr_vec.join("");
+            let speech: String = asr_vec.join("");
+            if speech.chars().count() < 3 {
+                continue;
+            }
             let mes = build_mes(&speech)?;
             let text = llm.generate_text(mes)?;
             println!("text: {}", text);

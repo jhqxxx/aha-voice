@@ -52,7 +52,7 @@ fn main() -> Result<()> {
     let config: cpal::StreamConfig = input_device.default_input_config().unwrap().into();
     let channels = config.channels as usize;
     let sample_rate = config.sample_rate as usize;
-    let min_num = sample_rate * channels;
+    let min_num = ((sample_rate * channels) as f32 * 0.5).ceil() as usize;
     std::thread::spawn(move || -> anyhow::Result<()> {
         let input_stream = input_device.build_input_stream(
             &config,

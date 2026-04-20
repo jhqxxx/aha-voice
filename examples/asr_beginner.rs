@@ -30,7 +30,7 @@ fn main() -> Result<()> {
     let sample_rate = config.sample_rate as usize;
     // let min_num =
     //     (16000usize / 1000 * 25) * (sample_rate as f32 / 16000.0).ceil() as usize * channels;
-    let min_num = sample_rate * channels;
+    let min_num = ((sample_rate * channels) as f32 * 0.5).ceil() as usize;
     std::thread::spawn(move || -> anyhow::Result<()> {
         let input_stream = input_device.build_input_stream(
             &config,

@@ -22,7 +22,7 @@ dependencies = [
 [[package]]
 name = "aha"
 version = "0.2.5"
-source = "git+https://github.com/jhqxxx/aha.git#deb8027a827af0a97335dbe40c50750173c34aeb"
+source = "git+https://github.com/jhqxxx/aha.git#0017bcd924c78b18d438acd79841a651b2688948"
 dependencies = [
  "ahash",
  "anyhow",
