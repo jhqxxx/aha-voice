@@ -137,7 +137,7 @@ fn main() -> Result<()> {
         let mut tts = VoxCPMGenerate::init(&args.voxcpm_path, None, None)?;
         println!("load tts model");
         let _ = tts.build_prompt_cache(
-            "哈喽大家好，我是蒋蒋，aha项目又有新的更新啦，我们添加了".to_string(),
+            "哈喽大家好，我是蒋蒋".to_string(),
             "file://./assets/jiangjiang.wav".to_string(),
         )?;
         let _ = tts.generate_use_prompt_cache("你好".to_string(), 2, 1024, 10, 2.0, false, 6.0)?;
