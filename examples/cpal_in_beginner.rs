@@ -1,6 +1,6 @@
 use std::sync::{Arc, Mutex};
 
-use aha_voice::err_fn;
+use aha_voice::utils::err_fn;
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
 
 fn main() {

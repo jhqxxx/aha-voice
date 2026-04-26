@@ -1,5 +1,5 @@
 use aha::{Tensor, models::qwen3_5::generate::Qwen3_5GenerateModel};
-use aha_voice::{build_mes, err_fn};
+use aha_voice::utils::{build_mes, err_fn};
 use anyhow::Result;
 use clap::Parser;
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
@@ -74,7 +74,7 @@ fn main() -> Result<()> {
                 continue;
             }
             let audio_data = Tensor::cat(&vad_vec, 0)?;
-            let asr_res = asr.asr_audio(&audio_data, true)?;
+            let asr_res = asr.asr_audio(&audio_data)?;
             println!("asr_res: {:?}", asr_res);
             if let Some(text) = asr_res.text {
                 let mut asr_string_guard = asr_string_clone.lock().unwrap();

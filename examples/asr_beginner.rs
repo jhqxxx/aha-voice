@@ -1,4 +1,4 @@
-use aha_voice::err_fn;
+use aha_voice::utils::err_fn;
 use anyhow::Result;
 use clap::Parser;
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
@@ -25,7 +25,12 @@ fn main() -> Result<()> {
     let input_device = host
         .default_input_device()
         .expect("failed to find input device");
-    let config: cpal::StreamConfig = input_device.default_input_config().unwrap().into();
+    // let config: cpal::StreamConfig = input_device.default_input_config().unwrap().into();
+    let config = cpal::StreamConfig {
+        channels: 1,
+        sample_rate: 16000,
+        buffer_size: cpal::BufferSize::Default,
+    };
     let channels = config.channels as usize;
     let sample_rate = config.sample_rate as usize;
     // let min_num =

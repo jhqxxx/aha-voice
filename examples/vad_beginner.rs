@@ -1,4 +1,4 @@
-use aha_voice::err_fn;
+use aha_voice::utils::err_fn;
 use anyhow::Result;
 use clap::Parser;
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};

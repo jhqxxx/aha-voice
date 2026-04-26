@@ -7,12 +7,18 @@ license = "Apache-2.0"
 description = "aha voice"
 
 [dependencies]
+aec3 = "0.1.7"
 aha = { git = "https://github.com/jhqxxx/aha.git"}
 anyhow = "1.0.102"
 clap = "4.6.1"
 cpal = { version = "0.17.3" }
+crossbeam-channel = "0.5.15"
+futures-util = "0.3.32"
 hound = "3.5.1"
+regex = "1.12.3"
+ringbuf = "0.4.8"
 serde_json = "1.0.149"
+tokio = "1.52.1"
 
 [features]
 cuda = ["aha/cuda"]
